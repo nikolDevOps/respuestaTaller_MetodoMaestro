@@ -1,0 +1,83 @@
+ IMPORTANTE: SE DEBE DE ABRIR LA TERMINAL DE VSCODE Y ESPECIFICAR EL LUGAR EN EL QUE SE ENCUENTRA LA CARPETA CON LOS ARCHIVOS
+ Y LUEGO INGRESAR EL NOMBRE DEL ARCHIVO DE PYTHON (buscar_personas) PARA ASI CORRER EL CÓDIGO. 👩🏼‍💻
+
+
+
+
+1. DISEÑO DEL ALGORITMO
+
+Objetivo: Buscar una persona específica por su nombre en una base de datos desordenada.
+
+Estrategia: Como los registros están desordenados, no se puede usar búsqueda binaria. Se implementa una búsqueda lineal, revisando cada registro uno por uno.
+
+Pseudocódigo:
+Algoritmo BuscarPorNombre(nombre_buscado):
+    Conectar a la base de datos
+    Ejecutar consulta: SELECT * FROM personas WHERE nombre = nombre_buscado
+    Si hay resultados:
+        Mostrar los datos de la persona
+    Si no hay resultados:
+        Mostrar "No se encontró la persona"
+    Cerrar conexión
+
+2. FORMULACIÓN DE LA RECURRENCIA
+
+ El algoritmo se implementa de forma recursiva, dividiendo los registros en dos partes.
+
+Recurrencia:
+T(n) = 2 * T(n/2) + O(1)
+
+Esto representa dos llamadas recursivas sobre la mitad de los datos, con un costo constante para dividir 
+y combinar.
+
+3. RESOLUCIÓN DE LA RECURRENCIA (MÉTODO MAESTRO)
+
+Forma general:
+T(n) = a * T(n/b) + f(n)
+
+Identificación de parámetros:
+a = 2
+b = 2
+f(n) = O(1)
+
+Cálculo:
+log_b a = log_2 2 = 1
+n^d = n^0 = 1
+n^{log_b a} = n^1
+
+Comparación:
+f(n) = O(n^0) < n^{log_b a} = n^1
+
+Caso aplicado: Caso 1 del Método Maestro
+
+Resultado:
+T(n) = Θ(n^{log_b a}) = Θ(n)
+
+4. ANÁLISIS DEL MÉTODO MAESTRO
+
+Valores identificados:
+a = 2
+b = 2
+d = 0
+
+Comparación:
+n^d = n^0 = 1
+n^{log_b a} = n^1
+
+Caso aplicado: Caso 1
+
+Complejidad temporal del algoritmo:
+T(n) = Θ(n)
+
+INTERPRETACIÓN FINAL
+
+El algoritmo tiene una complejidad lineal O(n), lo cual es coherente con una búsqueda secuencial sobre 
+registros desordenados. Aunque se puede estructurar de forma recursiva, su rendimiento sigue siendo 
+proporcional al número de registros, ya que cada uno debe ser evaluado.
+
+Este análisis demuestra cómo el Método Maestro permite evaluar el comportamiento temporal de algoritmos 
+recursivos y cómo la eficiencia depende del enfoque de diseño aplicado.
+
+
+
+

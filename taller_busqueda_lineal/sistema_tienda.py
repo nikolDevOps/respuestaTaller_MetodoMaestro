@@ -1,16 +1,10 @@
 
-
-
 # IMPORTACIÓN DE MÓDULOS
 
 from datos_ejemplo import productos, empleados  # Datos de prueba
 from funciones_busqueda import *                 # Funciones de búsqueda lineal
 
-
-
 # FUNCIONES DE VISUALIZACIÓN
-
-
 def mostrar_producto(p):
     """
     Muestra la información completa de un producto en formato legible.
@@ -85,11 +79,7 @@ def mostrar_lista_empleados(lista):
         for e in lista:
             mostrar_empleado(e)
 
-
-
 # MENÚS DE BÚSQUEDA
-
-
 def menu_productos():
     """
     Menú interactivo para búsqueda de productos.
@@ -220,11 +210,7 @@ def menu_empleados():
         else:
             print("Opción no válida. Elija entre 1 y 4.")
 
-
-
 # MENÚ PRINCIPAL Y EJECUCIÓN
-
-
 def main():
     """
     Función principal que inicia el sistema TechStore.
@@ -251,9 +237,7 @@ def main():
         else:
             print("Opción inválida. Por favor, intente de nuevo.")
 
-
 # PUNTO DE ENTRADA
-
-
 if __name__ == "__main__":
+
     main()

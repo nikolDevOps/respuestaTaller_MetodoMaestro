@@ -1,9 +1,5 @@
 
-
-
 # BÚSQUEDA LINEAL BÁSICA
-
-
 def busqueda_lineal_simple(lista, elemento):
     """
     Realiza una búsqueda lineal (secuencial) en una lista de elementos.
@@ -29,11 +25,7 @@ def busqueda_lineal_simple(lista, elemento):
             return i  # Elemento encontrado
     return -1  # No encontrado
 
-
-
 # BÚSQUEDA EN PRODUCTOS
-
-
 def buscar_producto_por_nombre(productos, nombre):
     """
     Busca un producto por su nombre exacto (insensible a mayúsculas).
@@ -141,11 +133,7 @@ def contar_productos_por_categoria(productos, categoria):
     """
     return sum(1 for p in productos if p['categoria'].lower() == categoria.lower())
 
-
-
 # BÚSQUEDA EN EMPLEADOS
-
-
 def buscar_empleado_por_nombre_completo(empleados, nombre, apellido):
     """
     Busca un empleado por su nombre y apellido completo.
@@ -189,4 +177,5 @@ def buscar_empleados_activos(empleados):
     Returns:
         list: Empleados con 'activo' == True.
     """
+
     return [e for e in empleados if e['activo']]
